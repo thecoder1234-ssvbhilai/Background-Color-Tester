@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body x-data="data()">
+    <div class="flex justify-center">
+        <div class="px-4 py-2">
+            <input type="text" id="colorInput" class="p-1 border-2 border-black text-black rounded-lg focus:outline-none" placeholder="Enter BG Color">
+            <button class="bg-gray-700 p-1 w-28 text-white rounded-lg" @click="changeColor()">Apply</button>
+        </div>
+    </div>
+
+    <script>
+        function data(){
+            return {
+                changeColor(){
+                    let color = document.getElementById('colorInput').value;
+                    if (color != "") {
+                        document.body.style.backgroundColor = color;                        
+                    } else {
+                        alert("Color Input Field can't be empty")
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>
